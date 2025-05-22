@@ -1,4 +1,4 @@
-import { MetodoPagamento } from "../MetodoPagamento";
+import { MetodoPagamento } from "../../MetodoPagamento";
 
 export class PagamentoCartao implements MetodoPagamento {
     processarPagamento(valor: number): void {
