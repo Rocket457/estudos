@@ -7,8 +7,11 @@ export class ProcessadorPagamento {
     constructor(metodoPagamento: MetodoPagamento) {
         this.metodoPagamento = metodoPagamento;
     }
-
+    
     processar(valor: Money): void {
+        if (valor.amount.lessThanOrEqualTo(0)) {
+            throw new Error("Valor deve ser maior que zero.");
+        }
         return this.metodoPagamento.processarPagamento(valor);
     }   
     
